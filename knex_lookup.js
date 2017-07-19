@@ -1,13 +1,5 @@
 const settings = require("./settings")
-const knex = require("knex")({
-  client: 'pg',
-  connection: {
-    host     : settings.hostname,
-    user     : settings.user,
-    password : settings.password,
-    database : settings.database,
-  }
-})
+const knex = require("knex") (require('./knexfile').development)
 
 const name = process.argv.slice(2).toString()
 
